@@ -1,0 +1,40 @@
+{
+  "name": "shinri-launcher",
+  "version": "1.0",
+  "description": "STLauncher",
+  "author": "Haromrine",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "dependencies": {
+    "gamedig": "^5.0.0"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.shinri.launcher",
+    "productName": "Shinri Launcher",
+    "asar": true,
+    "files": [
+      "**/*",
+      "!node_modules/electron-builder${/*}",
+      "!dist${/*}"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "icon": "icon.ico",
+      "target": [
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ]
+    }
+  }
+}
